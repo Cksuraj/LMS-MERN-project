@@ -3,10 +3,13 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import { config } from 'dotenv';
+import ConnectMDB from './config/dbconfig.js';
 
 config();
 
 const app = express();
+
+ConnectMDB();
 
 app.use(express.json());
 app.use(cookieParser());
