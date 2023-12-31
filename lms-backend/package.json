@@ -1,14 +1,14 @@
 {
   "name": "lms-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learning_management_system",
   "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "suraj",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
