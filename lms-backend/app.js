@@ -6,6 +6,8 @@ import { config } from "dotenv";
 import ConnectMDB from "./config/dbconfig.js";
 import userRoutes from "./routes/user.route.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
+import courseRoutes from './routes/course.route.js';
+
 
 config();
 
@@ -26,6 +28,7 @@ app.use(
 
 /*Creating User Routes */
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/course", courseRoutes);
 
 // if user try to access any other url it show error
 app.use('/',(req,res)=>{
