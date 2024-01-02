@@ -3,6 +3,7 @@ config();
 import app from "./app.js";
 import ConnectMDB from "./config/dbconfig.js";
 import {v2} from 'cloudinary'
+import Razorpay from 'razorpay'
 
 // Cloudinary configuration
 v2.config({
@@ -11,7 +12,11 @@ v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-
+// Razorpay configuration
+export const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_SECRET,
+});
 
 const PORT =process.env.PORT || 4044;
 
