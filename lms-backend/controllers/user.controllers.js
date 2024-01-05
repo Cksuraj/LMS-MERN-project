@@ -1,9 +1,9 @@
 import fs from 'fs/promises';
-
 import asyncHandler from '../middlewares/asyncHandler.middlewares.js';
 import AppError from '../utils/appError.js';
 import User from '../models/user.model.js';
 import sendEmail from '../utils/sendEmail.js';
+import cloudinary from 'cloudinary';
 
 // cookieOptions 
 const cookieOptions = {
@@ -59,12 +59,12 @@ export const register = asyncHandler(async (req, res, next) => {
         user.avatar.public_id = result.public_id;
         user.avatar.secure_url = result.secure_url;
 
-        // After successful upload remove the file from local storage
         fs.rm(`uploads/${req.file.filename}`);
+
       }
     } catch (error) {
       return next(
-        new AppError(error || 'File not uploaded, please try again', 400)
+        new AppError(error || 'File not uploaded, please try again', 409)
       );
     }
   }
