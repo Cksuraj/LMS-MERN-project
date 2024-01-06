@@ -32,9 +32,8 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
   try {
     const response = await axiosInstance.post("user/register", data);
     toast.success(response?.data?.message ,{id:waitmessage});
-    return response.data;
+    return await response.data;
   } catch (error) {
-    // console.error("Error creating account:", error);
     toast.error(error?.response?.data?.message || "Failed to create account");
     throw error; 
   }
