@@ -9,8 +9,7 @@ export default function CourseCard({ data }) {
   return (
     <div 
       className="md:w-[22rem] w-[95%] md:h-[445px] h-[500px] shadow-custom dark:shadow-lg rounded-lg cursor-pointer group overflow-hidden bg-white dark:bg-zinc-700 transition-transform transform hover:scale-[1.01]"
-    onClick={() => navigate("/courses/description/", {state: {...data}})}
-    >
+    onClick={() => navigate("/courses/description/", {state: {...data}})} >
       <div className="relative overflow-hidden">
         <img
           className="h-48 w-full rounded-tl-lg rounded-tr-lg group-hover:scale-[1.05] transition-all ease-in-out duration-300"

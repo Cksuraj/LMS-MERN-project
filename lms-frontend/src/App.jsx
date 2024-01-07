@@ -7,6 +7,7 @@ import Notfound from './Pages/Notfound'
 import Signin from './Pages/Signin'
 import Signup from './Pages/Signup'
 import CourseList from './Pages/course/Getallcourse'
+import Contactus from './Pages/Contactus'
 
 function App() {
   // Routes Are container or Tree Which Provides the Branch Route to visit the other path. 
@@ -17,6 +18,7 @@ function App() {
     <Route path='/' element={<HomeLayout />}> </Route>
     <Route path='/about' element={<Aboutus />}></Route> 
     <Route path='/courses' element={<CourseList />} /> 
+    <Route path='/contact' element={<Contactus />} /> 
     <Route path='/signup' element={<Signup />} />
     <Route path='/signin' element={<Signin />} />
     <Route path='*' element={<Notfound />}></Route> 
