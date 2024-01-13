@@ -25,11 +25,13 @@ function App() {
         <Route path="/about" element={<Aboutus />}></Route>
         <Route path="/courses" element={<CourseList />} />
         <Route path="/denied" element={<Denied />} />
+
         <Route element={<Requireauth allowed={["ADMIN"]} />}>
-          <Route path="/courses/create" element={<Createcourse />} />
+          <Route path="/course/create" element={<Createcourse />} />
         </Route>
+
         <Route
-          path="/courses/courseDescription"
+          path="/course/courseDescription"
           element={<CourseDescription />}
         />
         <Route path="/contact" element={<Contactus />} />
