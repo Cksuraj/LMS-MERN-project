@@ -30,7 +30,7 @@ function HomeLayout({ children }) {
     e.preventDefault();
 
     const response = await dispatch(logout());
-    if (response?.payload?.data) navigate("/");
+    if (response?.payload?.message) navigate("/");
   }
 
   return (

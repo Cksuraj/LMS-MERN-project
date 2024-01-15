@@ -12,6 +12,9 @@ import CourseDescription from "./Pages/course/CourseDescription";
 import { Denied } from "./Pages/Denied";
 import Requireauth from "./Auth/Requireauth";
 import Createcourse from "./Pages/course/Createcourse";
+import Profile from "./Pages/User/Profile";
+import Editprofile from "./Pages/User/EditProfile";
+
 
 function App() {
   // Routes Are container or Tree Which Provides the Branch Route to visit the other path.
@@ -25,6 +28,12 @@ function App() {
         <Route path="/about" element={<Aboutus />}></Route>
         <Route path="/courses" element={<CourseList />} />
         <Route path="/denied" element={<Denied />} />
+
+        <Route element={<Requireauth allowed={["ADMIN", "USER"]} />}>
+          <Route path='/user/editprofile' element= { <Editprofile /> } />
+        <Route path="/user/profile" element={<Profile />} />
+        </Route>
+
 
         <Route element={<Requireauth allowed={["ADMIN"]} />}>
           <Route path="/course/create" element={<Createcourse />} />
